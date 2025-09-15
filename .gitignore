@@ -1,0 +1,30 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# VEP cache and build envs
+.vep_cache/
+.vep_src/
+.mambaforge/
+
+# Large data downloads/raws
+data/conservation/
+data/dbnsfp/dbNSFP*.zip
+data/dbnsfp/dbNSFP4.4a_variant.chr*
+data/gtex/GTEx_*.txt
+
+# Raw VCFs and indices (keep only final annotated VCF)
+clinvar.vcf.gz*
+cardiac_*.vcf.gz*
+*.csi
+*.tbi
+
+# Intermediate/verbosity outputs
+results/annotated_variants.vep.vcf
+results/annotated_variants.vep.vcf_warnings.txt
+results/annotated_variants.vep.vcf_summary.html
+results/model/shap_values.csv
+
+# Bundles
+*.tgz

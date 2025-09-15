@@ -1,0 +1,8 @@
+pandas>=2.2
+pyBigWig>=0.3.22
+requests>=2.32
+scikit-learn>=1.4
+shap>=0.43
+xgboost>=1.7
+matplotlib>=3.8
+streamlit>=1.36
