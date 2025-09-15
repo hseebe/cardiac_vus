@@ -1,0 +1,2 @@
+chrom,pos,ref,alt,id,Consequence,IMPACT,SYMBOL,gnomADg_AF,SIFT_pred,Polyphen2_HVAR_pred,Polyphen2_HDIV_pred,GERP++_RS,phyloP100way_vertebrate,heart_lv_tpm,heart_aa_tpm,prob_pathogenic
+1,930335,A,G,.,missense_variant&splice_region_variant,MODERATE,SAMD11,,0.0,0.0,0.0,,,,,0.5221344755772921

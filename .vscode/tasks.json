@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Streamlit app",
+			"type": "shell",
+			"command": "source .venv/bin/activate && streamlit run app.py",
+			"args": [],
+			"isBackground": true,
+			"problemMatcher": [
+				"$eslint - stylish"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Run Streamlit app",
+			"type": "shell",
+			"command": "source .venv/bin/activate && streamlit run app.py --server.port 8503",
+			"args": [],
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Run Streamlit app (updated)",
+			"type": "shell",
+			"command": "source .venv/bin/activate && streamlit run app.py --server.port 8504",
+			"args": [],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}

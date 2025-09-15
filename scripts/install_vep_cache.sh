@@ -29,11 +29,12 @@ run_docker_install() {
   if ! docker image inspect "$TAG" >/dev/null 2>&1; then
     docker pull "$TAG"
   fi
-  # Use container path /opt/vep/.vep for cache, mount host cache there
+  # Use container path /opt/vep/.vep for cache, mount host cache there.
+  # Some images lack vep_install in PATH; reliably call INSTALL.pl in repo.
   docker run --rm -v "$CACHE_DIR:/opt/vep/.vep" "$TAG" \
-    vep_install -a cf -s homo_sapiens -y GRCh38 -c /opt/vep/.vep --CONVERT --force || \
+    bash -lc 'cd /opt/vep/src/ensembl-vep && perl INSTALL.pl -a cf -s homo_sapiens -y GRCh38 -c /opt/vep/.vep --CONVERT --force' || \
   docker run --rm -v "$CACHE_DIR:/opt/vep/.vep" "$TAG" \
-    vep_install -a cf -s homo_sapiens -y GRCh38 -c /opt/vep/.vep --force
+    bash -lc 'cd /opt/vep/src/ensembl-vep && perl INSTALL.pl -a cf -s homo_sapiens -y GRCh38 -c /opt/vep/.vep --force'
 }
 
 if ! run_local_install; then
